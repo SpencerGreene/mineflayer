@@ -24,6 +24,7 @@ bot.on('inject_allowed', () => {
 function blockToSow () {
   return bot.findBlock({
     point: bot.entity.position,
+    useExtraInfo: true,
     matching: (block) => {
       if (block && block.type === mcData.blocksByName.farmland.id) {
         const blockAbove = bot.blockAt(block.position.offset(0, 1, 0))
